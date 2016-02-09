@@ -1,3 +1,9 @@
+Note:
+
+This pyswip version is exactly the same that can be obtained through Google code but with a fix to work on Macs using swi-prolog from brew.
+To install swi-prolog just type in a terminal:
+brew install homebrew/x11/swi-prolog 
+
 PySWIP README
 ============
 
