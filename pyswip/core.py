@@ -149,7 +149,7 @@ def _findSwiplFromExec():
                     else:  # Will this ever happen?
                         fullName = None
                 
-    except (OSError, KeyError): # KeyError from accessing rtvars
+    except (OSError, KeyError,ValueError): # KeyError from accessing rtvars
         pass
     
     return (fullName, swiHome)
@@ -253,7 +253,7 @@ def _findSwiplLin():
     # Our last try: some hardcoded paths.
     paths = ['/lib', '/usr/lib', '/usr/local/lib', '.', './lib']
     names = ['libswipl.so', 'libpl.so']
-
+    paths.extend(glob.glob(r'/usr/local/Cellar/swi-prolog/*/libexec/lib/swipl-*/lib/*darwin*'))
     path = None
     for name in names:
         for try_ in paths:
